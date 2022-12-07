@@ -22,7 +22,7 @@ func initializeDir() {
 	}
 }
 
-func removeDir() {
+func removeAllDir() {
 	// Remove the .sgit directory
 	if err := os.RemoveAll(".sgit"); err != nil {
 		fmt.Println("Error: ", err)

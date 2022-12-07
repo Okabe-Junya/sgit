@@ -12,3 +12,11 @@ func createDir(dirname string) {
 		}
 	}
 }
+
+func removeDir(dirname string) {
+	if _, err := os.Stat(dirname); !os.IsNotExist(err) {
+		if err := os.RemoveAll(dirname); err != nil {
+			fmt.Println("Error: ", err)
+		}
+	}
+}

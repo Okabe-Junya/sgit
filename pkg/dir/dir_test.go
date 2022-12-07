@@ -13,7 +13,7 @@ func TestMain(m *testing.M) {
 	m.Run()
 
 	// Remove the .sgit directory
-	removeDir()
+	removeAllDir()
 }
 
 func TestInitializeDir(t *testing.T) {
@@ -34,4 +34,16 @@ func TestInitializeDir(t *testing.T) {
 	if err != nil {
 		t.Error("Error: ", err)
 	}
+}
+
+func TestCreateDir(t *testing.T) {
+	// Create a new directory
+	createDir(".sgit/test")
+
+	// Check if the .sgit/test directory exists
+	_, err := os.Stat(".sgit/test")
+	if err != nil {
+		t.Error("Error: ", err)
+	}
+	removeDir(".sgit/test")
 }
