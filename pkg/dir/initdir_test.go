@@ -1,4 +1,4 @@
-package initdir
+package dir
 
 import (
 	"os"
