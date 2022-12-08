@@ -7,13 +7,13 @@ import (
 
 func TestMain(m *testing.M) {
 	// Call the function we are testing
-	initializeDir()
+	InitializeDir()
 
 	// Run the tests
 	m.Run()
 
 	// Remove the .sgit directory
-	removeAllDir()
+	RemoveAllDir()
 }
 
 func TestInitializeDir(t *testing.T) {

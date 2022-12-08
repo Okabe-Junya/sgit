@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func initializeDir() {
+func InitializeDir() {
 	// Create the .sgit/objects directory
 
 	if err := os.MkdirAll(".sgit/objects", 0755); err != nil {
@@ -22,7 +22,7 @@ func initializeDir() {
 	}
 }
 
-func removeAllDir() {
+func RemoveAllDir() {
 	// Remove the .sgit directory
 	if err := os.RemoveAll(".sgit"); err != nil {
 		fmt.Println("Error: ", err)
