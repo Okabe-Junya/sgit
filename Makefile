@@ -8,6 +8,10 @@ $(BINARY): fmt lint test
 	@echo "Building..."
 	go build -o $(BINARY) ./cmd/sgit
 
+build-min:
+	@echo "Building..."
+	go build -o $(BINARY) ./cmd/sgit
+
 build: $(BINARY)
 
 lint:
