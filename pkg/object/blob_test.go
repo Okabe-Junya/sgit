@@ -4,5 +4,5 @@ import "testing"
 
 func TestStoreBlob(t *testing.T) {
 	content := "hello world"
-	storeBlob(content)
+	StoreBlob(content)
 }

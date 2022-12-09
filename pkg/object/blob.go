@@ -24,6 +24,7 @@ func compress(r io.Reader) (io.Reader, error) {
 }
 
 func StoreBlob(content string) {
+	// BUGFIX: なんかバグってるので直せ
 	header := "blob " + strconv.Itoa(len(content)) + "\x00"
 
 	store := header + content
