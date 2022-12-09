@@ -38,7 +38,7 @@ func TestInitializeDir(t *testing.T) {
 
 func TestCreateDir(t *testing.T) {
 	// Create a new directory
-	createDir(".sgit/test")
+	CreateDir(".sgit/test")
 
 	// Check if the .sgit/test directory exists
 	_, err := os.Stat(".sgit/test")
