@@ -29,10 +29,7 @@ func StoreBlob(content string) {
 
 	// sha1 ハッシュを計算する
 	store := header + content
-	h := sha1.New()
-	h.Write([]byte(store))
-	hs := h.Sum(nil)
-	sha1_store := hex.EncodeToString(hs)
+	sha1_store := calcSHA1(store)
 
 	// zlib でファイルを圧縮する
 	zr, err := compress(bytes.NewReader([]byte(store)))
@@ -53,4 +50,12 @@ func StoreBlob(content string) {
 	}
 	defer f.Close()
 	f.Write(b.Bytes())
+}
+
+func calcSHA1(content string) string {
+	h := sha1.New()
+	h.Write([]byte(content))
+	hs := h.Sum(nil)
+	sha1_content := hex.EncodeToString(hs)
+	return sha1_content
 }
