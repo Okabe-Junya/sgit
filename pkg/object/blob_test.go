@@ -10,7 +10,8 @@ func TestMain(m *testing.M) {
 }
 
 func TestStoreBlob(t *testing.T) {
+	rootdir := "testdata"
 	content := "hello world"
-	StoreBlob(content)
+	StoreBlob(content, rootdir)
 
 }

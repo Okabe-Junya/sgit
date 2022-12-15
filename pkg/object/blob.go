@@ -24,7 +24,7 @@ func compress(r io.Reader) (io.Reader, error) {
 	return buf, nil
 }
 
-func StoreBlob(content string) {
+func StoreBlob(content string, rootdir string) {
 	header := "blob " + strconv.Itoa(len(content)) + "\x00"
 
 	// sha1 ハッシュを計算する
@@ -39,7 +39,7 @@ func StoreBlob(content string) {
 	b := zr.(*bytes.Buffer)
 
 	// ファイルを作成する
-	dir_path := sha1_store[0:2]
+	dir_path := rootdir + "/" + sha1_store[0:2]
 	file_path := sha1_store[2:]
 	dir.CreateDir(string(dir_path))
 	full_path := string(dir_path) + "/" + string(file_path)
