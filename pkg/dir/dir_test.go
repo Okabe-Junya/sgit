@@ -45,5 +45,5 @@ func TestCreateDir(t *testing.T) {
 	if err != nil {
 		t.Error("Error: ", err)
 	}
-	removeDir(".sgit/test")
+	RemoveDir(".sgit/test")
 }
