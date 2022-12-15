@@ -7,13 +7,13 @@ import (
 
 func TestMain(m *testing.M) {
 	// Call the function we are testing
-	initializeDir()
+	InitializeDir()
 
 	// Run the tests
 	m.Run()
 
 	// Remove the .sgit directory
-	removeAllDir()
+	RemoveAllDir()
 }
 
 func TestInitializeDir(t *testing.T) {
@@ -38,7 +38,7 @@ func TestInitializeDir(t *testing.T) {
 
 func TestCreateDir(t *testing.T) {
 	// Create a new directory
-	createDir(".sgit/test")
+	CreateDir(".sgit/test")
 
 	// Check if the .sgit/test directory exists
 	_, err := os.Stat(".sgit/test")

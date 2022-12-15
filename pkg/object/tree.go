@@ -31,3 +31,20 @@ func (t EnumTreeEntryType) String() string {
 		return ""
 	}
 }
+
+func initializeTree() *Tree {
+	return &Tree{}
+}
+
+func (t *Tree) AddEntry(entry TreeEntry) {
+	t.Entries = append(t.Entries, entry)
+}
+
+func (t *Tree) GetEntry(name string) *TreeEntry {
+	for _, entry := range t.Entries {
+		if entry.Name == name {
+			return &entry
+		}
+	}
+	return nil
+}
